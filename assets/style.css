@@ -40,12 +40,16 @@ button{
     color: #fff;
     cursor: pointer;
     font-size: 20px;
+    transition: background 1s;
 }
-
+button:hover{
+    background: #000;
+}
 ul{
     list-style-type: none;
     padding: 0;
     margin: 0;
+    transition: all ease-in-out .05s;
 }
 
 li{
@@ -90,4 +94,18 @@ span{
     text-indent: -10000px;
     /* height: 50px;
     width: 50px; */
+}
+.footer{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+a{
+    color:white;
+    font-size: 1em;
+    text-decoration: none;
+    transition: all 1s;
+}
+a:hover{
+    font-size: 1.5em;
 }
