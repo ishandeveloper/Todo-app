@@ -12,5 +12,6 @@ app.use('/assets',express.static('assets'));
 todoController(app);
 
 //Running Up The Server
-app.listen(3000);
+var port = process.env.PORT || 8080;
+app.listen(port);
 console.log("Server Up at Port 3000");
