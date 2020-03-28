@@ -1,0 +1,24 @@
+{
+  "name": "todo-app",
+  "version": "1.0.2",
+  "description": "A simple todo app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishandeveloper/Todo-App.git"
+  },
+  "author": "ishandeveloper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ishandeveloper/Todo-App/issues"
+  },
+  "homepage": "https://github.com/ishandeveloper/Todo-App#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
