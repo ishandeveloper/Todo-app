@@ -26,6 +26,9 @@ var Todo=mongoose.model('Todo',todoSchema);
 
 module.exports=(app)=>{
 
+    app.get('/',(req,res)=>{
+        res.redirect("/todo");
+    });
     app.get('/todo', (req,res)=>{
         Todo.find({},(err,data)=>{
             if (err) throw err;
