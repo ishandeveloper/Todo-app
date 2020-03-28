@@ -1,22 +1,29 @@
 <html>
     <head>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <script src="/assets/todo-list.js"></script>
         <link href="/assets/style.css" rel="stylesheet" type="text/css">
+        <title>Todo App | ishandeveloper</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+        <link rel="icon" type="image/png" href="assets/img/favicon.png">
     </head>
     <body>
         <div class="info">
         <h1>Hi, Ishan!</h1>
         </div>
         <div id="todo-table">
-            <form>
+            <form method="POST">
                 <input type="text" name="item" placeholder="Add New Item..." required>
                 <button type="submit">Add Item</button>
             </form>
             <ul>
                 <% for(var i=0;i<todos.length;i++){%>
-                    <li><%=todos[i].item%></li>
+                    <li><%= todos[i].item %></li>
                 <% } %>
             </ul>
+        </div>
+        <div class="footer">
+            Made with <font color="red">♥</font> by <a target="_blank" href="https://github.com/ishandeveloper">ishandeveloper </a>
         </div>
     </body>
 </html>
