@@ -1,5 +1,5 @@
 body{
-    background: #0d1521;
+    background: #0d1521 !important;
     font-family: tahoma;
     color: #989898;
 }
@@ -52,19 +52,42 @@ li{
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    font-family: arial;
+    font-family: "Segoe UI Light",sans-serif;
     font-size: 20px;
     cursor: pointer;
     letter-spacing: 1px;
+    transition: all 1s;
 }
 
 li:hover{
     text-decoration: line-through;
     background: rgba(0,0,0,0.2);
 }
-
+.info{
+    display: block;
+    padding:25px;
+    padding-left:30px;
+}
 h1{
-    background: url(/logo.png) no-repeat center;
+    font-family: "Segoe UI Light", sans-serif;
+    text-transform: capitalize;
+    display: inline;
+}
+.logo{
+    /* display: inline; */
+    height: 50px;
+    border-radius: 50%;
+    margin:10px;
+    
+    /* margin-left: 50px; */
+    
+}
+span{
+    background-image: url('/assets/img/logo.jfif');
+    background-size: contain;
+    background-repeat: no-repeat;
     margin-bottom: 0;
     text-indent: -10000px;
+    /* height: 50px;
+    width: 50px; */
 }
