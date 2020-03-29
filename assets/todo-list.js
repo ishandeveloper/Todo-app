@@ -20,8 +20,8 @@ $(document).ready(function(){
     });
   
     $('li').on('click', function(){
-        var item = $(this).text().replace(/ /g, "-");
-        // var item = $(this).text().trim().replace(/ /g, "-");
+        // var item = $(this).text().replace(/ /g, "-");
+        var item = $(this).text().trim().replace(/ /g, "-");
         // var item = e.target.textContent.replace(/ /g, "-");  
         $.ajax({
           type: 'DELETE',
