@@ -12,7 +12,7 @@ pipeline {
                   excludes: '',
                   //execCommand: 'echo "Replace me by your build/install scripts"', 
                   execCommand: 'npm install && npm start', 
-                  execTimeout: 300000, 
+                  execTimeout: 120000, 
                   flatten: false, 
                   makeEmptyDirs: false, 
                   noDefaultExcludes: false, 
