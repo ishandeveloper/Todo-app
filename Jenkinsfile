@@ -10,8 +10,8 @@ pipeline {
                 sshTransfer(
                   cleanRemote: false, 
                   excludes: '',
-                  execCommand: 'echo "Replace me by your build/install scripts"', 
-                  //execCommand: 'node app.js', 
+                  //execCommand: 'echo "Replace me by your build/install scripts"', 
+                  execCommand: 'node app.js', 
                   execTimeout: 120000, 
                   flatten: false, 
                   makeEmptyDirs: false, 
