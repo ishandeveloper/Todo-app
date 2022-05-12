@@ -34,10 +34,11 @@ pipeline {
         }
       }
       
-      stage('Perform Manual Testing') {
+      stage('Perform manual testing') {
         steps {
-          // One or more steps need to be included within the steps block.
-          echo "Perform Manual Testing"
+          timeout(activity: true, time: 5) {
+            input 'Proceed to production?'
+          }
         }
       }
       
