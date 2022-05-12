@@ -11,7 +11,7 @@ pipeline {
                   cleanRemote: false, 
                   excludes: '',
                   //execCommand: 'echo "Replace me by your build/install scripts"', 
-                  execCommand: 'npm install & node app.js', 
+                  execCommand: 'npm install; node app.js', 
                   execTimeout: 120000, 
                   flatten: false, 
                   makeEmptyDirs: false, 
