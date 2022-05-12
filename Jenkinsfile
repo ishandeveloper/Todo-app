@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    
     stages {
       stage('Deploy App to Staging') {
         steps {
