@@ -13,7 +13,7 @@ pipeline {
                   //execCommand: 'echo "Replace me by your build/install scripts"', 
                   execCommand: '''
                                 npm install
-                                pm2 restart start app.js
+                                pm2 start -f app.js
                                 ''', 
                   execTimeout: 120000, 
                   flatten: false, 
