@@ -9,8 +9,9 @@ pipeline {
               configName: 'staging', transfers: [
                 sshTransfer(
                   cleanRemote: false, 
-                  excludes: '', 
-                  execCommand: 'node app.js', 
+                  excludes: '',
+                  execCommand: 'echo "Replace me by your build/install scripts"', 
+                  //execCommand: 'node app.js', 
                   execTimeout: 120000, 
                   flatten: false, 
                   makeEmptyDirs: false, 
