@@ -12,6 +12,7 @@ pipeline {
                   excludes: '',
                   //execCommand: 'echo "Replace me by your build/install scripts"', 
                   execCommand: '''
+                                cd todoapp
                                 npm install
                                 pm2 start -f app.js
                                 ''', 
