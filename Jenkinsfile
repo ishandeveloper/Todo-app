@@ -14,6 +14,7 @@ pipeline {
                   execCommand: '''
                                 cd todoapp
                                 npm install
+                                pm2 delete app 2> /dev/null
                                 pm2 start -f app.js
                                 ''', 
                   execTimeout: 120000, 
@@ -58,6 +59,7 @@ pipeline {
                   execCommand: '''
                                 cd todoapp
                                 npm install
+                                pm2 delete app 2> /dev/null
                                 pm2 start -f app.js
                                 ''', 
                   execTimeout: 120000, 
