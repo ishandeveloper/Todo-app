@@ -4,8 +4,8 @@ pipeline {
       stage('Deploy App to Staging') {
         steps {
           sshPublisher(
-            publishers: 
-            [sshPublisherDesc(
+            publishers: [
+              sshPublisherDesc(
               configName: 'staging', transfers: [
                 sshTransfer(
                   cleanRemote: false, 
@@ -48,8 +48,30 @@ pipeline {
       
       stage('Release to Production') {
         steps {
-          // One or more steps need to be included within the steps block.
-          echo "Release to Production"
+          sshPublisher(
+            publishers: [
+              sshPublisherDesc(
+              configName: 'production', transfers: [
+                sshTransfer(
+                  cleanRemote: false, 
+                  excludes: '', 
+                  execCommand: '''
+                                cd todoapp
+                                npm install
+                                pm2 start -f app.js
+                                ''', 
+                  execTimeout: 120000, 
+                  flatten: false, 
+                  makeEmptyDirs: false, 
+                  noDefaultExcludes: false, 
+                  patternSeparator: '[, ]+', 
+                  remoteDirectory: '', 
+                  remoteDirectorySDF: false, 
+                  removePrefix: '', 
+                  sourceFiles: '*/')], 
+          usePromotionTimestamp: false, 
+          useWorkspaceInPromotion: false, 
+          verbose: true)])
         }
       }
     }
