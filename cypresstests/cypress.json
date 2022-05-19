@@ -1,5 +1,6 @@
 {
  "testFiles": "**/*.{feature,features}",
  "experimentalStudio": true,
- "baseUrl":"http://localhost:8080"
+ "baseUrl":"http://localhost:8080",
+ "video": false
 }
