@@ -34,17 +34,20 @@ pipeline {
       
       stage('Run Automated Tests') {
         steps {
-            sh 'cd /home/usr_2210622_my_ipleiria_pt/tests'
-            git 'https://github.com/2210622/TodoCypressSQ.git'
-            sh 'cd TodoCypressSQ'
-            sh 'npm prune'
-            sh 'npm cache clean --force'
-            sh 'npm i'
-            sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
-            sh 'rm -f mochawesome.json'
-            sh 'npx cypress run test --config baseUrl="http://35.189.246.57:8080" --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome'
-            sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
-            sh 'npx marge mochawesome-report/mochawesome.json'
+            dir('/home/usr_2210622_my_ipleiria_pt/tests') {
+              sh 'rm -r TodoCypressSQ'
+              git 'https://github.com/2210622/TodoCypressSQ.git'
+              dir('TodoCypressSQ') {
+                sh 'npm prune'
+                sh 'npm cache clean --force'
+                sh 'npm i'
+                sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
+                sh 'rm -f mochawesome.json'
+                sh 'npx cypress run test --config baseUrl="http://35.189.246.57:8080" --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome'
+                sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
+                sh 'npx marge mochawesome-report/mochawesome.json'
+              }
+            }
           }
           post {
             success {
