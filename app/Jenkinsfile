@@ -39,13 +39,13 @@ pipeline {
       stage('Run Automated Tests') {
         steps {
           dir('cypresstests'){
-            sh 'ls'
+            //sh 'ls'
             sh 'npm prune'
             sh 'npm cache clean --force'
             sh 'npm i'
             sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
             sh 'rm -f mochawesome.json'
-            sh 'npm run jenkinstest --reporter mochawesome'
+            sh 'npm run jenkinstest'
             sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
             sh 'npx marge mochawesome-report/mochawesome.json'
             
