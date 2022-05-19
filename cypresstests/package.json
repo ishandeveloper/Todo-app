@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/TodoSQ/*.feature'"
+    "test": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/TodoSQ/AddTodo.feature,cypress/integration/TodoSQ/DeleteTodo.feature'"
   },
   "author": "",
   "license": "ISC",
