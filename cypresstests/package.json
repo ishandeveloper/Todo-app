@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/TodoSQ/AddTodo.feature,cypress/integration/TodoSQ/DeleteTodo.feature'"
+    "test": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/TodoSQ/AddTodo.feature,cypress/integration/TodoSQ/DeleteTodo.feature'",
+    "jenkinstest": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/TodoSQ/AddTodo.feature,cypress/integration/TodoSQ/DeleteTodo.feature' --config baseUrl='http://35.189.246.57:8080'"
   },
   "author": "",
   "license": "ISC",
