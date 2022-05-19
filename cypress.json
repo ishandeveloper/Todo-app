@@ -1,0 +1,5 @@
+{
+ "testFiles": "**/*.{feature,features}",
+ "experimentalStudio": true,
+ "baseUrl":"http://localhost:8080"
+}

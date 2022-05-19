@@ -4,8 +4,8 @@
   "description": "A simple todo app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/TodoSQ/*.feature'"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,12 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "mongoose": "^5.9.15"
+  },
+  "devDependencies": {
+    "cypress": "^9.5.2",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+    "cypress-cucumber-preprocessor": {
+      "nonGlobalStepDefinitions": true
   }
 }
