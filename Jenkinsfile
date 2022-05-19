@@ -60,7 +60,7 @@ pipeline {
           //     }
           // One or more steps need to be included within the steps block.
           // echo "Run Automated Tests"
-          }
+          //}
       }
       
       stage('Perform manual testing') {
