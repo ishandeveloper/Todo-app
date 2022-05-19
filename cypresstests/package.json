@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/TodoSQ/AddTodo.feature,cypress/integration/TodoSQ/DeleteTodo.feature'",
-    "jenkinstest": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/TodoSQ/AddTodo.feature,cypress/integration/TodoSQ/DeleteTodo.feature' --config baseUrl='http://35.189.246.57:8080' --reporter mochawesome"
+    "jenkinstest": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/TodoSQ/AddTodo.feature,cypress/integration/TodoSQ/DeleteTodo.feature' --config baseUrl=http://35.189.246.57:8080"
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +13,7 @@
     "cypress": "^9.5.2",
     "cypress-cucumber-preprocessor": "^4.3.1"
   },
-    "cypress-cucumber-preprocessor": {
-      "nonGlobalStepDefinitions": true
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }
