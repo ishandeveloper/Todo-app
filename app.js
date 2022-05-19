@@ -12,6 +12,6 @@ app.use('/assets', express.static('assets'));
 todoController(app);
 
 //Running Up The Server
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 8080;
 app.listen(port);
 console.log("Server Up at Port: " + port);
