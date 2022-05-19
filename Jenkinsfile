@@ -34,31 +34,9 @@ pipeline {
       
       stage('Run Automated Tests') {
         steps {
-              sh 'npm prune'
-              sh 'npm cache clean --force'
-              sh 'npm i'
-              sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
-              sh 'rm -f mochawesome.json'
-              sh 'npx cypress run addtest --config baseUrl="http://35.189.246.57:8080" --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome'
-              sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
-              sh 'npx marge mochawesome-report/mochawesome.json'
-          }
-          post {
-              success {
-                  publishHTML (
-                      target : [
-                          allowMissing: false,
-                          alwaysLinkToLastBuild: true,
-                          keepAll: true,
-                          reportDir: 'mochawesome-report',
-                          reportFiles: 'mochawesome.html',
-                          reportName: 'My Reports',
-                          reportTitles: 'The Report'])
-
-              }
           // One or more steps need to be included within the steps block.
-          // echo "Run Automated Tests"
-          }
+          echo "Run Automated Tests"
+        }
       }
       
       stage('Perform manual testing') {
