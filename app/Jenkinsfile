@@ -34,6 +34,7 @@ pipeline {
       
       stage('Run Automated Tests') {
         steps {
+          sh 'cd cypresstests'
           sh 'npm prune'
           sh 'npm cache clean --force'
           sh 'npm i'
