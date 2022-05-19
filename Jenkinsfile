@@ -34,7 +34,7 @@ pipeline {
       
       stage('Run Automated Tests') {
         steps {
-            sh 'cd tests'
+            sh 'cd /home/usr_2210622_my_ipleiria_pt/tests'
             git 'https://github.com/2210622/TodoCypressSQ.git'
             // sh 'npm prune'
             // sh 'npm cache clean --force'
