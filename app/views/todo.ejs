@@ -18,9 +18,14 @@
                 <button type="submit">Add Item</button>
             </form>
             <ul>
-                <% for(var i=0;i<todos.length;i++){%>
-                    <li><%= todos[i].item %></li>
-                <% } %>
+                    <% for(var i=0;i<todos.length;i++){%>
+                        <div class="all-todos">
+                            <li>
+                                <%= todos[i].item %>
+                            </li>
+                            <button class="edit-button">✏️</button>
+                        </div>
+                    <% } %>
             </ul>
         </div>
         <div class="footer">

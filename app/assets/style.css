@@ -109,3 +109,14 @@ a{
 a:hover{
     font-size: 1.5em;
 }
+
+.all-todos{
+    display: flex;
+    border-bottom: 1px solid white;
+}
+
+.edit-button{
+    padding: unset;
+    float: unset;
+    width: unset;
+}
