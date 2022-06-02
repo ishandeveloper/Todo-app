@@ -120,3 +120,11 @@ a:hover{
     float: unset;
     width: unset;
 }
+
+.hidden-form{
+    visibility: hidden;
+}
+
+.show-form{
+    visibility: visible !important;
+}

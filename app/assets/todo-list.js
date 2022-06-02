@@ -34,4 +34,7 @@ $(document).ready(function(){
         });
     });
   
+    $('.form-btn').click(function(){
+      $(this).next().toggleClass('show-form');
+    })
   });
