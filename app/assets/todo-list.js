@@ -33,6 +33,21 @@ $(document).ready(function(){
           }
         });
     });
+
+    $('.edit-button').on('click', function(){
+      // var item = $(this).text().replace(/ /g, "-");
+      var item = this.value.trim().replace(/ /g, "-");
+      // var item = e.target.textContent.replace(/ /g, "-");
+      $.ajax({
+        type: 'GET',
+        url: '/todo/' + item + '/edit',
+        success: function(data){
+          //do something with the data via front-end framework
+          //location.reload();
+          location.href ='/todo/' + item + '/edit';
+        }
+      });
+  });
   
     $('.form-btn').click(function(){
       $(this).next().toggleClass('show-form');

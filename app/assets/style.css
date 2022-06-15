@@ -110,7 +110,7 @@ a:hover{
     font-size: 1.5em;
 }
 
-.all-todos{
+.todo{
     display: flex;
     border-bottom: 1px solid white;
 }

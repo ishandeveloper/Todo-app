@@ -65,4 +65,24 @@ module.exports = (app) => {
             });
         });
     });
+
+    app.get('/todo/:item/edit', (req, res) => {
+        var item = req.params.item.replace(/\-/g, " ");
+        console.log(item);
+        Todo.find({item: item}, (err, data) => {
+            if (err) throw err;
+            console.log("tou aqui");
+            res.render('edit-todo.ejs', {
+                todo: data
+            });
+        });
+    });
+
+    app.post('/todo/edit', urlEncodedParser, (req, res) => {
+        Todo.findOneAndUpdate({item: req.body.oldItem}, {item: req.body.item}, (err, data) => {
+            if (err) throw err;
+            res.redirect('/todo');
+        });
+    });
+
 };

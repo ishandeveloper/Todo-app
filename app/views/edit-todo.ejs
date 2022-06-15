@@ -1,7 +1,7 @@
 <html>
     <head>
         <script src="http://code.jquery.com/jquery-1.12.3.min.js"></script>
-        <script src="/assets/todo-list.js"></script>
+        <script src="/assets/todo-edit.js"></script>
         <script src="/assets/mutation.js"></script>
         <link href="/assets/style.css" rel="stylesheet" type="text/css">
         <title>Todo App | Software Quality</title>
@@ -13,20 +13,10 @@
         <h1>Hi!</h1>
         </div>
         <div id="todo-table">
-            <form method="POST" action="/todo">
-                <input type="text" name="item" placeholder="Add New Item..." required>
-                <button type="submit">Add Item</button>
+            <form method="POST" action="/todo/edit">
+                <input type="text" name="item" value="<%= todo[0].item %>" required>
+                <button type="submit" value="<%= todo[0].item %>">Edit Item</button>
             </form>
-            <ul>
-                    <% for(var i=0;i<todos.length;i++){%>  
-                        <div class="todo">
-                            <li>
-                                <%= todos[i].item %>
-                            </li>
-                            <button class="edit-button" value="<%= todos[i].item %>">✏️</button>
-                        </div>
-                    <% } %>
-            </ul>
         </div>
         <div class="footer">
             Made with <font color="red">♥</font> by <a target="_blank" href="https://github.com/ishandeveloper">ishandeveloper </a>
